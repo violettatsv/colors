@@ -9,7 +9,11 @@
       }
     }
   ],
+  "installCommand": "npm install --include=dev",
   "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
   ]
 }
