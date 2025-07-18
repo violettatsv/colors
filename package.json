@@ -6,12 +6,13 @@
     "sass": "sass --watch src/scss:public/css",
     "pug": "pug -w views -o public",
     "copy:images": "cp -R src/img public/img",
-    "dev": "npm run sass & npm run pug" ,
+    "dev": "npm run sass & npm run pug",
     "start": "serve public",
+    "copy:assets": "copyfiles -u 1 src/img/**/* public/img && copyfiles -u 1 src/js/**/* public/js",
+    "build": "npm run copy:assets && npm run build:pug && npm run build:sass",
     "build:pug": "pug views --out public --pretty",
     "build:sass": "sass src/scss:public/css --no-source-map",
-    "build":       "npm run copy:images && npm run build:pug && npm run build:sass",
-    "vercel-build":"npm run build"
+    "vercel-build": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   "description": "",
   "devDependencies": {
     "axios": "^1.10.0",
+    "copyfiles": "^2.4.1",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.89.2",
     "serve": "^14.2.4",
