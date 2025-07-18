@@ -1,0 +1,73 @@
+header.header
+  .container
+    .header__inner
+      button.header__burger(type="button" aria-label="Открыть меню")
+        span.header__burger-line
+        span.header__burger-line
+        span.header__burger-line
+
+      .header__left
+        a.header__logo(href="#")
+          img(src="./img/logo.png", alt="")
+        nav.header__nav
+          ul.header__menu
+            li.header__menu-item: a(href="#") ПРОДУКТЫ
+            li.header__menu-item: a(href="#") ЦВЕТА
+            li.header__menu-item: a(href="#") ВДОХНОВЕНИЕ
+            li.header__menu-item: a(href="#") СОВЕТЫ
+            li.header__menu-item: a(href="#") НАЙТИ МАГАЗИН
+
+      .header__actions
+        .header__phone-block
+          a.header__phone(href="tel:+74952217769") +7 (495) 221-77-69
+          span.header__phone-note Заказать звонок
+
+        .header__icons
+          button.header__icon(type="button")
+            img(src="./img/icons/search.png", alt="Поиск")
+          button.header__icon(type="button")
+            img(src="./img/icons/profile.png", alt="Личный кабинет")
+          button.header__icon(type="button")
+            img(src="./img/icons/heart.png", alt="Избранное")
+          button#cart-button.header__icon.header__cart(type="button")
+            span.header__cart-count 0
+  div.cart-modal-overlay.hidden
+    div.cart-modal
+      button.cart-modal__close(type="button") ×
+      h2.cart-modal__title Корзина
+
+      .cart-modal__header
+        span.cart-modal__count 0 товаров
+        button.cart-modal__clear(type="button") очистить список
+
+      ul.cart-modal__list
+
+      .cart-modal__footer
+        div.cart-modal__total
+          span Итого&nbsp;
+          span.cart-modal__total-sum 0 ₽
+        button.cart-modal__order(type="button") ОФОРМИТЬ ЗАКАЗ
+
+  div.menu-modal-overlay.hidden
+    div.menu-modal
+      button.menu-modal__close(type="button" aria-label="Закрыть меню") ×
+      nav.menu-modal__nav
+        ul.menu-modal__menu
+          li.menu-modal__item: a.menu-modal__link(href="#") ПРОДУКТЫ
+          li.menu-modal__item: a.menu-modal__link(href="#") ЦВЕТА
+          li.menu-modal__item: a.menu-modal__link(href="#") ВДОХНОВЕНИЕ
+          li.menu-modal__item: a.menu-modal__link(href="#") СОВЕТЫ
+          li.menu-modal__item: a.menu-modal__link(href="#") НАЙТИ МАГАЗИН
+          button.header__icon(type="button")
+      .menu-modal__phone-block
+        a.menu-modal__phone(href="tel:+74952217769") +7 (495) 221-77-69
+        span.menu-modal__phone-note Заказать звонок
+
+      .menu-modal__icons
+        button.header__icon(type="button")
+          img(src="./img/icons/search.png" alt="Поиск")
+        button.header__icon(type="button")
+          img(src="./img/icons/profile.png" alt="Личный кабинет")
+        button.header__icon(type="button")
+          img(src="./img/icons/heart.png" alt="Избранное")
+

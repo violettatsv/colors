@@ -1,0 +1,106 @@
+section.catalog
+  ul.catalog__filters-list
+    li
+      label.catalog__filter
+        input.catalog__filter-input(type="checkbox", data-category="new")
+        span.catalog__filter-switch
+        | НОВИНКИ
+    li
+      label.catalog__filter
+        input.catalog__filter-input(type="checkbox", data-category="available")
+        span.catalog__filter-switch
+        | ЕСТЬ В НАЛИЧИИ
+    li
+      label.catalog__filter
+        input.catalog__filter-input(type="checkbox", data-category="contract")
+        span.catalog__filter-switch
+        | КОНТРАКТНЫЕ
+    li
+      label.catalog__filter
+        input.catalog__filter-input(type="checkbox", data-category="exclusive")
+        span.catalog__filter-switch
+        | ЭКСКЛЮЗИВНЫЕ
+    li
+      label.catalog__filter
+        input.catalog__filter-input(type="checkbox", data-category="sale")
+        span.catalog__filter-switch
+        | РАСПРОДАЖА
+
+  .container
+    h2.catalog__title
+      span 
+        span#product-count 0
+        |  ТОВАРОВ
+
+      select#sort(name="sort" class="visually-hidden")
+        option(value="price_high" selected) СНАЧАЛА ДОРОГИЕ
+        option(value="price_low") СНАЧАЛА НЕДОРОГИЕ
+        option(value="popular") СНАЧАЛА ПОПУЛЯРНЫЕ
+        option(value="new") СНАЧАЛА НОВЫЕ
+
+      .custom-select
+        button.custom-select__trigger(type="button")
+          span.custom-select__current Выберите сортировку
+          span.custom-select__arrow ▾
+        ul.custom-select__options
+          li.custom-select__option(data-value="price_high") СНАЧАЛА ДОРОГИЕ
+          li.custom-select__option(data-value="price_low") СНАЧАЛА НЕДОРОГИЕ
+          li.custom-select__option(data-value="popular") СНАЧАЛА ПОПУЛЯРНЫЕ
+          li.custom-select__option(data-value="new") СНАЧАЛА НОВЫЕ
+
+    h3.catalog__mobile-title Краски
+
+    .catalog__mobile-controls
+      button.catalog__filter-btn(type="button") ФИЛЬТРЫ
+
+      select#sort-mobile(name="sort" class="visually-hidden")
+        option(value="price_high" selected) СНАЧАЛА ДОРОГИЕ
+        option(value="price_low") СНАЧАЛА НЕДОРОГИЕ
+        option(value="popular") СНАЧАЛА ПОПУЛЯРНЫЕ
+        option(value="new") СНАЧАЛА НОВЫЕ
+
+      .custom-select
+        button.custom-select__trigger(type="button")
+          span.custom-select__current Выберите сортировку
+          span.custom-select__arrow ▾
+        ul.custom-select__options
+          li.custom-select__option(data-value="price_high") СНАЧАЛА ДОРОГИЕ
+          li.custom-select__option(data-value="price_low") СНАЧАЛА НЕДОРОГИЕ
+          li.custom-select__option(data-value="popular") СНАЧАЛА ПОПУЛЯРНЫЕ
+          li.custom-select__option(data-value="new") СНАЧАЛА НОВЫЕ
+
+    .catalog__list#catalog
+
+    div.filters-modal-overlay.hidden
+
+    div.filters-modal
+      h3.filters-modal__tap
+      ul.catalog__filters-list.filters-modal__list
+        li
+          label.catalog__filter
+            input.catalog__filter-input(type="checkbox" data-category="new")
+            span.catalog__filter-switch
+            | НОВИНКИ
+        li
+          label.catalog__filter
+            input.catalog__filter-input(type="checkbox" data-category="available")
+            span.catalog__filter-switch
+            | ЕСТЬ В НАЛИЧИИ
+        li
+          label.catalog__filter
+            input.catalog__filter-input(type="checkbox" data-category="contract")
+            span.catalog__filter-switch
+            | КОНТРАКТНЫЕ
+        li
+          label.catalog__filter
+            input.catalog__filter-input(type="checkbox" data-category="exclusive")
+            span.catalog__filter-switch
+            | ЭКСКЛЮЗИВНЫЕ
+        li
+          label.catalog__filter
+            input.catalog__filter-input(type="checkbox" data-category="sale")
+            span.catalog__filter-switch
+            | РАСПРОДАЖА
+
+
+    

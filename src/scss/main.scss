@@ -1,0 +1,12 @@
+@use "./components/slider";
+@use "./components/header";
+@use "./components/catalog";
+@use "./components/card";
+@use "./components/footer";
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}

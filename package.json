@@ -1,0 +1,26 @@
+{
+  "name": "colors",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:public/css",
+    "pug": "pug -w views -o public",
+    "dev": "npm run sass & npm run pug" ,
+    "start": "serve public",
+    "build:pug": "pug src/views --out public --pretty",
+    "build:sass": "sass src/scss:public/css --no-source-map",
+    "build": "npm run build:pug && npm run build:sass"
+  },
+  "vercel-build": "npm run build",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "axios": "^1.10.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.89.2",
+    "serve": "^14.2.4",
+    "swiper": "^11.2.10"
+  }
+}

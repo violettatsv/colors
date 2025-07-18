@@ -1,0 +1,337 @@
+.catalog {
+  padding: 40px;
+  display: flex;
+  column-gap: 40px;
+
+  &__title {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 12px;
+    font-weight: 500;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    gap: 40px;
+  }
+
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .custom-select {
+    position: relative;
+    width: 220px;
+    margin-left: 16px;
+
+    &__trigger {
+      width: 100%;
+      border: none;
+      background: #fff;
+      font-size: 12px;
+      padding: 8px 12px;
+      display: flex;
+      column-gap: 4px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    &__arrow {
+      display: flex;
+      height: 10px;
+      width: 10px;
+      line-height: 10px;
+      margin-bottom: 2px;
+    }
+
+    &__options {
+      list-style: none;
+      margin: 4px 0 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 10;
+    }
+
+    &.open .custom-select__options {
+      display: block;
+    }
+
+    &__option {
+      padding: 15px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #7bb899;
+      }
+    }
+
+    &.open::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: #000000;
+      z-index: 1100;
+      opacity: 0.7;
+    }
+
+    &.open .custom-select__options {
+      z-index: 2000;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__filters {
+    width: 200px;
+
+    &-title {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      &-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+      }
+    }
+  }
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    user-select: none;
+
+    &-input {
+      display: none;
+
+      &:checked + .catalog__filter-switch {
+        background-color: #7bb899;
+
+        &::before {
+          transform: translateX(16px);
+        }
+      }
+    }
+
+    &-switch {
+      width: 36px;
+      height: 22px;
+      background-color: #f2f2f2;
+      border-radius: 20px;
+      position: relative;
+      transition: background-color 0.2s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: black;
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+
+  &__mobile {
+    &-title,
+    &-controls {
+      display: none;
+    }
+  }
+}
+
+.filters {
+  &-modal {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  section.catalog > ul.catalog__filters-list {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog {
+    display: block !important;
+    &__title {
+      display: none;
+    }
+
+    &__list {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 20px;
+    }
+
+    &__mobile {
+      &-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      &-title {
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 88%;
+        margin: 50px 0;
+      }
+    }
+
+    &__filter-btn {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    &__title .custom-select {
+      display: none;
+    }
+
+    &__sort-mobile .custom-select {
+      display: block;
+      width: 150px;
+    }
+
+    .custom-select {
+      &__trigger {
+        display: flex;
+        justify-content: end;
+        padding: 0;
+      }
+    }
+
+    .article-card {
+      &__btn {
+        display: block;
+        opacity: 1;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 6px 14px;
+        background-color: #f2f2f2;
+        border-radius: 6px;
+        bottom: 44px;
+      }
+
+      &__price {
+        font-size: 16px;
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  .filters-modal {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: #fff;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+
+    &.open {
+      transform: translateY(0);
+    }
+
+    &__tap {
+      display: flex;
+      width: 28px;
+      height: 4px;
+      background-color: #1f2020;
+      opacity: 60%;
+      border-radius: 40px;
+      margin: 12px auto 0;
+    }
+
+    & .filters-modal__list {
+      padding: 40px 24px;
+      margin: 0;
+      max-height: calc(60vh - 80px);
+      overflow-y: auto;
+    }
+
+    &-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1000;
+      &.open {
+        display: block;
+      }
+    }
+  }
+}
