@@ -7,7 +7,7 @@
     "pug": "pug -w views -o public",
     "dev": "npm run sass & npm run pug" ,
     "start": "serve public",
-    "build:pug": "pug src/views --out public --pretty",
+    "build:pug": "pug views --out public --pretty",
     "build:sass": "sass src/scss:public/css --no-source-map",
     "build": "npm run build:pug && npm run build:sass"
   },
