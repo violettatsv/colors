@@ -5,13 +5,14 @@
   "scripts": {
     "sass": "sass --watch src/scss:public/css",
     "pug": "pug -w views -o public",
+    "copy:images": "cp -R src/img public/img",
     "dev": "npm run sass & npm run pug" ,
     "start": "serve public",
     "build:pug": "pug views --out public --pretty",
     "build:sass": "sass src/scss:public/css --no-source-map",
-    "build": "npm run build:pug && npm run build:sass"
+    "build":       "npm run copy:images && npm run build:pug && npm run build:sass",
+    "vercel-build":"npm run build"
   },
-  "vercel-build": "npm run build",
   "keywords": [],
   "author": "",
   "license": "ISC",
