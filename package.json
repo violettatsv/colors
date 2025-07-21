@@ -1,13 +1,16 @@
 {
   "name": "colors",
+  "homepage": "https://violettatsv.github.io/colors",
   "version": "1.0.0",
   "main": "index.js",
-    "scripts": {
-    "copy:assets": "copyfiles -u 1 src/img/**/* public/img && copyfiles -u 1 src/js/**/* public/js",
-    "build:pug":   "pug views --out public --pretty",
-    "build:sass":  "sass src/scss:public/css --no-source-map",
-    "build":       "npm run copy:assets && npm run build:pug && npm run build:sass",
-    "vercel-build":"npm run build"
+  "scripts": {
+    "copy:assets": "mkdir -p public/img public/js && cp -R src/img/* public/img && cp -R src/js/* public/js",
+    "build:pug": "pug views --out public --pretty",
+    "build:sass": "sass src/scss:public/css --no-source-map",
+    "build": "npm run copy:assets && npm run build:pug && npm run build:sass",
+    "vercel-build": "npm run build",
+    "predeploy": "npm run build",
+    "deploy":   "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,7 @@
   "devDependencies": {
     "axios": "^1.10.0",
     "copyfiles": "^2.4.1",
+    "gh-pages": "^6.3.0",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^1.89.2",
     "serve": "^14.2.4",
