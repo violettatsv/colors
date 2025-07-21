@@ -70,7 +70,8 @@ function renderCartList() {
 
     unique.forEach(product => {
         const qty = counts[product.id];
-        const img = product.imageUrl.replace('./', '/');
+        //const img = product.imageUrl.replace('./', '/');
+        const img = product.imageUrl.replace('./', '');
         const li = document.createElement('li');
         li.className = 'cart-modal__item';
         if (!product.category.includes('available')) li.classList.add('disabled');
@@ -216,7 +217,8 @@ function renderCatalog(products) {
     countEl.textContent = products.length;
 
     products.forEach(product => {
-        const imageUrl = product.imageUrl.replace('./', '/');
+        //const imageUrl = product.imageUrl.replace('./', '/');
+        const imageUrl = product.imageUrl.replace('./', '');
 
         const card = document.createElement('div');
         card.className = 'article-card';
