@@ -4,13 +4,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "copy:assets": "mkdir -p public/img public && cp -R src/img/* public/img && cp src/favicon.ico public/ && cp -R src/js/* public/js",
+    "copy:assets": "mkdir -p public/img public/js && cp -R src/img/. public/img/ && cp -R src/js/. public/js/",
     "build:pug": "pug views --out public --pretty",
     "build:sass": "sass src/scss:public/css --no-source-map",
     "build": "npm run copy:assets && npm run build:pug && npm run build:sass",
     "vercel-build": "npm run build",
-    "predeploy": "npm run build",
-    "deploy":   "gh-pages -d public"
+    "start": "serve public"
   },
   "keywords": [],
   "author": "",
