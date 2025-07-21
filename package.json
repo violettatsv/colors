@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "copy:assets": "mkdir -p public/img public/js && cp -R src/img/. public/img/ && cp -R src/js/. public/js/",
+    "pug":       "pug views --out public --pretty",
+    "pug:watch": "pug views --out public --pretty --watch",
     "build:pug": "pug views --out public --pretty",
     "build:sass": "sass src/scss:public/css --no-source-map",
     "build": "npm run copy:assets && npm run build:pug && npm run build:sass",
+    "styles":     "npm run build:sass",
+    "styles:watch": "sass --watch src/scss:public/css --no-source-map",
     "vercel-build": "npm run build",
     "start": "serve public"
   },

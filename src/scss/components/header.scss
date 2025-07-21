@@ -454,10 +454,16 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .header {
+    padding: 40px 40px 10px;
     &__menu {
       flex-direction: column;
+    }
+
+    &__inner {
+      border-bottom: 1px solid rgba(31, 32, 32, 0.06);
+      padding-bottom: 22px;
     }
 
     &__burger {

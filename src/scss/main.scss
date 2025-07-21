@@ -5,8 +5,16 @@
 @use "./components/footer";
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.06em;
+}
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
