@@ -1,0 +1,100 @@
+
+<section class="catalog">
+  <ul class="catalog__filters-list">
+    <li>
+      <label class="catalog__filter">
+        <input class="catalog__filter-input" type="checkbox" data-category="new"/><span class="catalog__filter-switch"></span>НОВИНКИ
+      </label>
+    </li>
+    <li>
+      <label class="catalog__filter">
+        <input class="catalog__filter-input" type="checkbox" data-category="available"/><span class="catalog__filter-switch"></span>ЕСТЬ В НАЛИЧИИ
+      </label>
+    </li>
+    <li>
+      <label class="catalog__filter">
+        <input class="catalog__filter-input" type="checkbox" data-category="contract"/><span class="catalog__filter-switch"></span>КОНТРАКТНЫЕ
+      </label>
+    </li>
+    <li>
+      <label class="catalog__filter">
+        <input class="catalog__filter-input" type="checkbox" data-category="exclusive"/><span class="catalog__filter-switch"></span>ЭКСКЛЮЗИВНЫЕ
+      </label>
+    </li>
+    <li>
+      <label class="catalog__filter">
+        <input class="catalog__filter-input" type="checkbox" data-category="sale"/><span class="catalog__filter-switch"></span>РАСПРОДАЖА
+      </label>
+    </li>
+  </ul>
+  <div class="container">
+    <h2 class="catalog__title"><span> <span id="product-count">0</span> ТОВАРОВ</span>
+      <select class="visually-hidden" id="sort" name="sort">
+        <option value="price_high" selected="selected">СНАЧАЛА ДОРОГИЕ</option>
+        <option value="price_low">СНАЧАЛА НЕДОРОГИЕ</option>
+        <option value="popular">СНАЧАЛА ПОПУЛЯРНЫЕ</option>
+        <option value="new">СНАЧАЛА НОВЫЕ</option>
+      </select>
+      <div class="custom-select">
+        <button class="custom-select__trigger" type="button"><span class="custom-select__current">Выберите сортировку</span><span class="custom-select__arrow">▾</span></button>
+        <ul class="custom-select__options">
+          <li class="custom-select__option" data-value="price_high">СНАЧАЛА ДОРОГИЕ</li>
+          <li class="custom-select__option" data-value="price_low">СНАЧАЛА НЕДОРОГИЕ</li>
+          <li class="custom-select__option" data-value="popular">СНАЧАЛА ПОПУЛЯРНЫЕ</li>
+          <li class="custom-select__option" data-value="new">СНАЧАЛА НОВЫЕ</li>
+        </ul>
+      </div>
+    </h2>
+    <h3 class="catalog__mobile-title">Краски</h3>
+    <div class="catalog__mobile-controls">
+      <button class="catalog__filter-btn" type="button">ФИЛЬТРЫ</button>
+      <select class="visually-hidden" id="sort-mobile" name="sort">
+        <option value="price_high" selected="selected">СНАЧАЛА ДОРОГИЕ</option>
+        <option value="price_low">СНАЧАЛА НЕДОРОГИЕ</option>
+        <option value="popular">СНАЧАЛА ПОПУЛЯРНЫЕ</option>
+        <option value="new">СНАЧАЛА НОВЫЕ</option>
+      </select>
+      <div class="custom-select">
+        <button class="custom-select__trigger" type="button"><span class="custom-select__current">Выберите сортировку</span><span class="custom-select__arrow">▾</span></button>
+        <ul class="custom-select__options">
+          <li class="custom-select__option" data-value="price_high">СНАЧАЛА ДОРОГИЕ</li>
+          <li class="custom-select__option" data-value="price_low">СНАЧАЛА НЕДОРОГИЕ</li>
+          <li class="custom-select__option" data-value="popular">СНАЧАЛА ПОПУЛЯРНЫЕ</li>
+          <li class="custom-select__option" data-value="new">СНАЧАЛА НОВЫЕ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="catalog__list" id="catalog"></div>
+    <div class="filters-modal-overlay hidden"></div>
+    <div class="filters-modal">
+      <h3 class="filters-modal__tap"></h3>
+      <ul class="catalog__filters-list filters-modal__list">
+        <li>
+          <label class="catalog__filter">
+            <input class="catalog__filter-input" type="checkbox" data-category="new"/><span class="catalog__filter-switch"></span>НОВИНКИ
+          </label>
+        </li>
+        <li>
+          <label class="catalog__filter">
+            <input class="catalog__filter-input" type="checkbox" data-category="available"/><span class="catalog__filter-switch"></span>ЕСТЬ В НАЛИЧИИ
+          </label>
+        </li>
+        <li>
+          <label class="catalog__filter">
+            <input class="catalog__filter-input" type="checkbox" data-category="contract"/><span class="catalog__filter-switch"></span>КОНТРАКТНЫЕ
+          </label>
+        </li>
+        <li>
+          <label class="catalog__filter">
+            <input class="catalog__filter-input" type="checkbox" data-category="exclusive"/><span class="catalog__filter-switch"></span>ЭКСКЛЮЗИВНЫЕ
+          </label>
+        </li>
+        <li>
+          <label class="catalog__filter">
+            <input class="catalog__filter-input" type="checkbox" data-category="sale"/><span class="catalog__filter-switch"></span>РАСПРОДАЖА
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
