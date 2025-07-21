@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -74,6 +75,19 @@
     </header>
     <section class="slider">
       <div class="container">
+        <nav class="slider__breadcrumbs">
+          <ul class="slider__breadcrumbs-list">
+            <li class="slider__breadcrumbs-item"><a href="/">ГЛАВНАЯ</a></li>
+            <li class="slider__breadcrumbs-sep">•</li>
+            <li class="slider__breadcrumbs-item"><a href="/products">ПРОДУКТЫ</a></li>
+            <li class="slider__breadcrumbs-sep">•</li>
+            <li class="slider__breadcrumbs-item"><span>КРАСКИ</span></li>
+          </ul>
+        </nav>
+        <div class="slider__overlay">
+          <h2 class="slider__title">Краски</h2>
+          <p class="slider__subtitle">Идеально подходят для стен и других поверхностей.<br /> Найди свой идеальный цвет!</p>
+        </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="img/slider.png" alt="Краска 1"></div>

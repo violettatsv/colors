@@ -400,9 +400,16 @@
   opacity: 0.5;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 40px 10px;
+  }
   .header__menu {
     flex-direction: column;
+  }
+  .header__inner {
+    border-bottom: 1px solid rgba(31, 32, 32, 0.06);
+    padding-bottom: 22px;
   }
   .header__burger {
     display: block;
